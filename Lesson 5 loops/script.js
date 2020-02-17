@@ -1,31 +1,47 @@
-// var userIsTired = true,
-//     number = 0;
+
+
+//Задание №2 Угадайка сгенерированного числа
+
+// function again() {
+//     yourNum = +prompt('попробуй еще раз');
+// }
+// var victory = false;
+// var number = Math.ceil(Math.random() * 10);
+// var yourNum = +prompt('введите число от 1 до 10');
+
+
+
 // do {
-//     userIsTired = confirm("Are you tired of clicking on ok " + (++number) + "?");
-// } while (userIsTired);
+//     again();
+//     if (yourNum == number) {
+//         victory = true(alert('Вы угадали'))
+//     }
+//     if (Number.isNaN(yourNum)) {
+//         alert('цифры вводи епт');
+//     }
+//     if (yourNum === null) {
+//         alert('зря');
+//     }
+// } while (!victory);
 
-// var number = 0;
-// do ++number;
-// while (confirm("Are you tired of clicking on ok " + number + "?"))
+// Задание №3 Кратные числа 
 
-function again() {
-    yourNum = +prompt('попробуй еще раз');
-}
-var victory = false;
-var number = Math.ceil(Math.random() * 10);
-var yourNum = +prompt('введите число от 1 до 10');
+// var n = + prompt('введите число')
+
+// for (var i = 1; i < 100; i++) {
+//     if (i % n) continue;
+//     console.log(i);
+// }
 
 
+// Задание №4 Кратные числа 
 
-do {
-    again();
-    if (yourNum == number) {
-        victory = true(alert('Вы угадали'))
-    }
-    if (Number.isNaN(yourNum)) {
-        alert('цифры вводи епт');
-    }
-    if (yourNum === null) {
-        alert('зря');
-    }
-} while (!victory);
+// var n = + prompt('введите число')
+// var y = + prompt('сколько числе нужно получить')
+
+// for (var i = 1; i < (y * n + 1); i++) {
+//     if (i % n) continue;
+//     console.log(i);
+// }
+
+
