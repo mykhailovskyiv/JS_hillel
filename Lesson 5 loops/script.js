@@ -27,9 +27,6 @@ do {
     if (Number.isNaN(yourNum)) {
         alert('цифры вводи епт');
     }
-    if (yourNum === null) {
-        alert('зря');
-    }
 } while (!victory);
 
 // Задание №3 Кратные числа 
