@@ -31,4 +31,3 @@ for (var i = 0; i < pickTimes; i++) {
     console.log(isLinesFill);
 }
 
-
