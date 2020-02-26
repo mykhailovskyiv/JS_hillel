@@ -92,22 +92,66 @@
 
 // console.log(casinoResult);
 
-function getRandom(min, max) {
-    console.log(Math.floor(Math.random() * (max - min) + min));
-    var getRandom = getRandom(1, 3)
+// function getRandom(min, max) {
+//     console.log(Math.floor(Math.random() * (max - min) + min));
+//     var getRandom = getRandom(1, 3)
+// }
+
+// function creatGame() {
+//     for (j = 0; j < 1; j++) {
+//         enterNum();
+//     }
+// }
+
+
+
+
+
+
+// function enterNum() {
+//     var numberResult = false;
+//     var yourNum = +prompt('enter number from 1 to 10');
+//     var randomNumber = Math.ceil(Math.random() * 2)
+//     console.log(randomNumber)
+//     for (var i = 0; i <= 0; i++) {
+//         if (randomNumber == yourNum) {
+//             alert('ура');
+//         } else if (randomNumber != yourNum) {
+//             alert('неа');
+//         }
+//     }
+//     return true;
+// }
+
+// var result = creatGame();
+
+
+function creatGame() {
+    for (j = 0; j < 1; j++) {
+        enterNum();
+        if (enterNum() = true) {
+            alert('ура');
+        }
+    }
 }
+
+
 
 
 
 
 function enterNum() {
+    var numberResult = false;
     var yourNum = +prompt('enter number from 1 to 10');
-    var randomNumber = getRandom(1, 3)
-    if (randomNumber == yourNum) {
-        alert('you win');
-    } if (randomNumber != yourNum) {
-        alert('try again');
+    var randomNumber = Math.ceil(Math.random() * 2)
+    console.log(randomNumber)
+    for (var i = 0; i <= 0; i++) {
+        if (randomNumber == yourNum) {
+            enterNum() = true;
+        } else if (randomNumber != yourNum) {
+            enterNum() = false;
+        }
     }
 }
 
-var result = enterNum();
+var result = creatGame();
