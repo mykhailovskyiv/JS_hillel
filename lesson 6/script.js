@@ -1,4 +1,5 @@
-// Casino
+// Casino Создать массив из 3х массивов с 3-мя рандомными значениями.
+
 
 var arr = [];
 var elements = 3;
@@ -25,7 +26,7 @@ for (f = 0; f < numberOfUser; f++) {
 }
 
 
-// Alphabet
+// Alphabet Подготовить строку из всех возможных букв английского алфавита.
 
 
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -56,3 +57,65 @@ for (var i = 0; i < wordsAmount; i++) {
 for (var key in library) {
     console.log('You have ' + library[key].length + ' words with length of ' + key);
 }
+
+//Alphabet #2 с менторсокй помощью :)
+
+var alfabet = "abcdefghijklmnopqrstuvwxyz";
+
+var minLettersInWord = 5;
+var maxLettersInWord = 10;
+var numOfWords = 20;
+
+function createRandomNumber(min, max) {
+    return Math.floor(min + Math.random() * (max - min + 1));
+}
+
+function createRandomWord() {
+    var wordLength = createRandomNumber(5, 10);
+    var word = "";
+
+    for (var i = 0; i < wordLength; i++) {
+        var index = createRandomNumber(0, alfabet.length - 1);
+        var letter = alfabet[index];
+
+        word += letter;
+    }
+
+    return word;
+}
+
+function calculateWordCount(ar) {
+    var obj = {};
+    for (var i = 0; i < ar.length; i++) {
+        var word = ar[i];
+        var index = word.length;
+
+        if (obj[index] === undefined) {
+            obj[index] = [];
+            obj[index].push(word);
+        } else {
+            obj[index].push(word);
+        }
+    }
+
+    return obj;
+}
+
+function print(result) {
+    for (var key in result) {
+        var value = result[key];
+
+        console.log(key, value);
+        console.log("You have " + value.length + " words with length " + key);
+    }
+}
+
+var arr = [];
+for (var i = 0; i < numOfWords; i++) {
+    var randomWord = createRandomWord();
+    arr.push(randomWord);
+}
+
+var result = calculateWordCount(arr);
+
+print(result);

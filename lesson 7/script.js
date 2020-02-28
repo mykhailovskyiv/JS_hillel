@@ -1,27 +1,33 @@
 
-function createGame(yourNum, randomNumber) {
-    var resultOfNum = false;
-    if (yourNum === randomNumber) {
-        resultOfNum = true; alert('mission complete CJ'); console.log(randomNumber);
-    }
-    return resultOfNum;
-}
+// Разделить задачу с угадыванием числа на функции. 
 
 
+function createGame() {
+    var randomNumber = Math.floor(Math.random() * 3) + 1;
 
-
-
-
-function enterNum() {
-
-    for (var randomNumber = Math.floor(Math.random() * 5) + 1, yourNum = true; yourNum;) {
-        yourNum = +prompt("enter the number from 1 to 5 ");
-        if (createGame(yourNum, randomNumber)) {
-            yourNum = false
+    while (true) {
+        var result = requestAndCheck(randomNumber);
+        if (result) {
+            break;
         }
     }
-
 }
 
-var result = enterNum();
+function requestAndCheck(randomNumber) {
+    console.log("randomNumber", randomNumber);
+    var value = prompt("Enter number");
 
+    if (value === null || Number.isNaN(+value)) {
+        alert("try again");
+        return true;
+    }
+
+    if (+value === randomNumber) {
+        alert("mission compete CJ");
+        return true;
+    }
+
+    return false;
+}
+
+var result = createGame();
