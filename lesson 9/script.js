@@ -45,9 +45,9 @@ function Squad(defaultResources) {
     if (defaultResources) this.combineResources(defaultResources);
 }
 
-Squad.prototype.areReadyToMove = function (askDistance) {
+Squad.prototype.areReadyToMove = function () {
     for (var i = 0; i < this.squad.length; i++) {
-        if (this.squad[i].isReadyToMove(askDistance) === false) {
+        if (this.squad[i].isReadyToMove() === false) {
             return false;
         }
     }
