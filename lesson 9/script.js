@@ -40,36 +40,29 @@ console.log(dwarf.distance);
 
 
 
-function Squad() {
+function Squad(defaultResources) {
     this.squad = [];
+    if (defaultResources) this.combineResources(defaultResources);
 }
 
-var restore = [];
-
-Squad.prototype.everyIsReadyToMove = function () {
-    return this.squad.every(function (unit) {
-        return unit.isReadyToMove() === true;
-    });
-};
-
-Squad.prototype.everyIsReadyToFight = function () {
-    return this.squad.every(function (unit) {
-        return unit.isReadyToFight() === true;
-    });
-};
-
-Squad.prototype.combineResources = function (unit) {
-    if (unit.health < 5 || unit.distance < 50) {
-        restore.push(unit);
-    } else {
-        this.squad.push(unit);
+Squad.prototype.areReadyToMove = function (askDistance) {
+    for (var i = 0; i < this.squad.length; i++) {
+        if (this.squad[i].isReadyToMove(askDistance) === false) {
+            return false;
+        }
     }
-};
-
-
-var unitOne = new MilitaryResource(dwarf);
-var unitTwo = new MilitaryResource(dwarf);
-var unitThre = new MilitaryResource(dwarf);
-var squad = new Squad();
-
-console.log(restore);
+    return true;
+}
+Squad.prototype.areReadyToFight = function () {
+    for (var i = 0; i < this.squad.length; i++) {
+        if (this.squad[i].isReadyToFight() === false) {
+            return false;
+        }
+    }
+    return true;
+}
+Squad.prototype.restoreAll = function () {
+    for (let i = 0; i < this.squad.length; i++) {
+        this.squad[i].restore();
+    }
+}
