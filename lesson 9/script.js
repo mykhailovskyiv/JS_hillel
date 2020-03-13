@@ -66,3 +66,16 @@ Squad.prototype.restoreAll = function () {
         this.squad[i].restore();
     }
 }
+
+Squad.prototype.getReadyToMoveResources = function () {
+    for (var i = 0; i < this.squad.length; i++) {
+        if (this.squad[i].getReadyToMoveResources() === false) {
+            return false;
+        }
+    }
+    return true;
+}
+
+Squad.prototype.cloneResource = function () {
+    var dwarfTWo = new MilitaryResource('dwarf')
+}
