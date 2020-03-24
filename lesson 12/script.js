@@ -15,6 +15,9 @@ function Mammal() {
     Animal.call(this)
 };
 
+Mammal.prototype = Object.create(Animal.prototype);
+Mammal.prototype.constructor = Mammal;
+
 Mammal.prototype.giveMilk = function () {
     if (this.gender === 'female') {
         return true
@@ -25,19 +28,18 @@ Mammal.prototype.giveMilk = function () {
     }
 };
 
-Mammal.prototype = Object.create(Animal.prototype);
-Mammal.prototype.constructor = Mammal;
+Coon.prototype = Object.create(Mammal.prototype);
+Coon.prototype.constructor = Coon;
 
 function Coon() {
     Mammal.call(this)
 };
 
-Coon.prototype = Object.create(Mammal.prototype);
-Coon.prototype.constructor = Coon;
 
 Coon.prototype.thief = function () {
-    console.log(["im thief"]);
+    console.log("im thief");
 };
+
 
 var coon = new Coon();
 console.log(coon);
