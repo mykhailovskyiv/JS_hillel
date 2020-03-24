@@ -28,15 +28,18 @@ console.log(res);
 
 //filter
 
-function filter(arr) {
+function filter(arr, cb) {
     var arrTwo = [];
     for (var i = 0; i < arr.length; i++) {
-        if (arr[i] >= 0) arrTwo = arr[i];
+        if (cb(arr[i], i)) {
+            arrTwo[arrTwo.length] = arr[i];
+        }
     }
     return arrTwo;
 }
 var res = filter([1, 2, 3], function (number, index) { return index > 1 });
 console.log(res);
+
 
 //some
 
@@ -54,10 +57,11 @@ console.log(res);
 
 function every(arr, cb) {
     for (i = 0; i < arr.length; i++) {
-        if (cb(arr[i], i))
-            return true;
+        if (!cb(arr[i], i))
+            return false;
     }
-    return false;
+    return true;
 }
-var res = every([1, 2, 3], function (num, index) { return index > 0 });
+var res = every([1, 2, 3], function (num) { return num > 0 });
 console.log(res);
+
