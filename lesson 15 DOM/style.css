@@ -3,9 +3,15 @@ body {
 }
 
 .card-wrapper {
+    margin: 0 auto;
     width: 200px;
     height: 400px;
     background-color: grey;
+    float: left;
+}
+
+.card-wrapper.two {
+    float: right;
 }
 
 .health-bar {
@@ -39,6 +45,10 @@ body {
     background-position: center;
     background-size: cover;
     margin: 10px 5px 5px 5px;
+}
+
+.avatar-block.two {
+    background-image: url(img/logarius.jpg);
 }
 
 .inner {

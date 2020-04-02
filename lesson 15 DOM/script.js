@@ -1,42 +1,17 @@
-var champ = new champion('Dwarf', 200, 100);
+var champ = new champion('Hunter', 300, 100);
+var enemy = new boss('Boss', 500, 300);
 var wrapper = document.getElementById('wrapper');
 console.log(champ);
+console.log(enemy);
 
-function createChampion(champ, parent) {
-    var healthInner = element('div', {
-        classes: ['health-inner', 'inner'],
-        style: {
-            width: '100%'
-        }
-    });
-    var staminaInner = element('div', {
-        classes: ['stamina-inner', 'inner'],
-        style: {
-            width: '100%'
-        }
-    });
-    var health = element('div', { classes: ['health-bar'] }, [healthInner]),
-        stamina = element('div', { classes: ['stamina-bar'] }, [staminaInner]),
-        avatar = element('div', { classes: ['avatar-block'] });
-    var card = element('div', {
-        classes: ['card-wrapper']
-    },
-        [health, stamina, avatar]
-    );
 
-    health.addEventListener('click', function () {
-        champ.health = champ.health - champ.maxHealth * 0.1;
-        var percent = (champ.health / champ.maxHealth) * 100;
-        healthInner.style.width = percent + '%';
-    });
+champ.render(wrapper);
+enemy.render(wrapper);
 
-    stamina.addEventListener('click', function () {
-        champ.stamina = champ.stamina - champ.maxStamina * 0.1;
-        var percent = (champ.stamina / champ.maxStamina) * 100;
-        staminaInner.style.width = percent + '%';
-    });
+setInterval(function () {
+    enemy.damage(5);
+}, 1000);
 
-    parent.append(card);
-}
-
-createChampion(champ, wrapper);
+setTimeout(function () {
+    enemy.restore()
+}, 5000)
