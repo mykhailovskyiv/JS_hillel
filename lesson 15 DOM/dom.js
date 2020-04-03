@@ -57,7 +57,7 @@ function createChampion() {
         stamina = element('div', { classes: ['stamina-bar'] }, [staminaInner]),
         avatar = element('div', { classes: ['avatar-block',] });
     var card = element('div', {
-        classes: ['card-wrapper']
+        classes: ['cardWrapper']
     },
         [health, stamina, avatar]
     );
@@ -91,7 +91,7 @@ function createBoss() {
         stamina = element('div', { classes: ['stamina-bar two'] }, [staminaInner]),
         avatar = element('div', { classes: ['avatar-block two',] });
     var card = element('div', {
-        classes: ['card-wrapper two']
+        classes: ['cardWrapper two']
     },
         [health, stamina, avatar]
     );

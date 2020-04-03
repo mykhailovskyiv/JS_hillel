@@ -8,10 +8,15 @@ var champion = (function () {
     }
 
 
+
     champion.prototype.initListeners = function () {
         var self = this;
         this.elements.health.addEventListener('click', function () {
             self.damage(10);
+            if (self.health === 0) {
+                var cardWrapDiv = event.target.closest('.cardWrapper');
+                cardWrapDiv.remove();
+            }
         });
 
         this.elements.stamina.addEventListener('click', function () {

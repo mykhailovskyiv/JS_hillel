@@ -2,7 +2,7 @@ body {
     margin: 0 auto;
 }
 
-.card-wrapper {
+.cardWrapper {
     margin: 0 auto;
     width: 200px;
     height: 400px;
@@ -10,7 +10,7 @@ body {
     float: left;
 }
 
-.card-wrapper.two {
+.cardWrapper.two {
     float: right;
 }
 
