@@ -27,11 +27,15 @@ var champion = (function () {
     champion.prototype.move = function (by) {
         this.stamina = this.stamina - this.maxStamina * (by / 100);
         this.repaint();
+        if (this.stamina < 10) {
+            this.restore();
+        }
     };
 
     champion.prototype.restore = function () {
         this.health = this.maxHealth;
-        this.stamina = this.maxStamina
+        this.stamina = this.maxStamina;
+        this.repaint();
     }
 
     champion.prototype.repaint = function () {

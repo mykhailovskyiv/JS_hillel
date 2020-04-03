@@ -34,8 +34,16 @@ body {
     background-color: blueviolet;
 }
 
+.health-inner.two {
+    background-color: crimson;
+}
+
 .stamina-inner {
     background-color: greenyellow;
+}
+
+.stamina-inner.two {
+    background-color: darkcyan;
 }
 
 .avatar-block {

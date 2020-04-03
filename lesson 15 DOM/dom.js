@@ -76,19 +76,19 @@ function createChampion() {
 
 function createBoss() {
     var healthInner = element('div', {
-        classes: ['health-inner', 'inner'],
+        classes: ['health-inner two', 'inner'],
         style: {
             width: '100%'
         }
     });
     var staminaInner = element('div', {
-        classes: ['stamina-inner', 'inner'],
+        classes: ['stamina-inner two', 'inner'],
         style: {
             width: '100%'
         }
     });
-    var health = element('div', { classes: ['health-bar'] }, [healthInner]),
-        stamina = element('div', { classes: ['stamina-bar'] }, [staminaInner]),
+    var health = element('div', { classes: ['health-bar two'] }, [healthInner]),
+        stamina = element('div', { classes: ['stamina-bar two'] }, [staminaInner]),
         avatar = element('div', { classes: ['avatar-block two',] });
     var card = element('div', {
         classes: ['card-wrapper two']
