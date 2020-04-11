@@ -1,0 +1,15 @@
+{
+  "name": "node-classes",
+  "version": "1.0.0",
+  "description": "NodeJs Learning",
+  "main": "index.js",
+  "dependencies": {
+    "loadash": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemone exoress-server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
