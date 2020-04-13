@@ -1,22 +1,24 @@
 var fs = require('fs');
 
-// var value = fs.readFileSync('message.txt', { encoding: 'utf8' });
-// var res = fs.writeFileSync('message.txt', Number(value) + 1)
-// console.log(res);
+var value = fs.readFileSync('message.txt', { encoding: 'utf8' });
+console.log(value);
 
+// fs.writeFile('message.txt', 'Hello Valleron', function (err) {
+//     if (err) console.log('Error', err);
+//     console.log('File has been saved ');
+// })
 
-
-// fs.readFile('message.txt', function (err, data) {
-//     fs.writeFile('mesage.txt', Number(da) 'hello node.js', function (err) {
-//         if (err) console.log('error', err);
-//         console.log('file has been saved');
-//     });
+// fs.readFile('message.txt', function (_, data) {
 //     console.log(data.toString('utf8'));
 // })
 
-// fs.promises
-//     .readFile('message.txt')
-//     .then(function (data) {
-//         return data.toString
-//     })
-//     .then(function (toString) { })
+fs.promises.readFile('message.txt')
+    .then(function (data) {
+        return data.toString();
+    })
+    .then(function (string) {
+        return fs.promises.writeFile('message.txt', Number(string) + 1)
+    })
+    .then(function () {
+        console.log('File is ready!')
+    })
