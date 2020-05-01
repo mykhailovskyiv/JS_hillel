@@ -1,12 +1,9 @@
 var http = require('http');
 
-var user = (function () {
-    function user(id, name) {
-        this.id = id || 'id';
-        this.name = name || 'User Name';
-    }
-    return user;
-})();
+function user(id, name) {
+    this.id = id || 'id';
+    this.name = name || 'User Name';
+};
 
 
 function arrUsers(arrlenght) {
@@ -17,16 +14,17 @@ function arrUsers(arrlenght) {
     return arr;
 }
 
-var arrofName = arrUsers(10).map(function (users) {
-    return users.name
+var arrOfUsers = arrUsers(10).map(function (id) {
+    return id
 })
 
-console.log(arrofName)
 
+
+console.log(arrOfUsers)
 
 
 var server = http.createServer(function (req, res) {
     res.writeHead(200);
-    res.end('Array of my --- ' + arrofName);
+    res.end(JSON.stringify(arrOfUsers));
 });
 server.listen(8080);

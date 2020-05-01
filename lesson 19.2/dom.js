@@ -60,3 +60,4 @@ function createChampion() {
 
     parent.append(card);
 }
+
