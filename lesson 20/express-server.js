@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+var cors = require('cors')
+
 
 function user(id, name) {
     this.id = id || 'id';
@@ -20,7 +22,10 @@ var arrOfUsers = arrUsers(10).map(function (id) {
 })
 
 
-app.use(express.json());
+
+
+app.use(cors())
+
 
 
 app.get('/', function (req, res) {
