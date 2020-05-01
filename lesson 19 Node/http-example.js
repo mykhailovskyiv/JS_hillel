@@ -1,12 +1,9 @@
 var http = require('http');
 
-var user = (function () {
-    function user(id, name) {
-        this.id = id || 'id';
-        this.name = name || 'User Name';
-    }
-    return user;
-})();
+function user(id, name) {
+this.id = id || 'id';
+this.name = name || 'User Name';
+};
 
 
 function arrUsers(arrlenght) {
@@ -26,7 +23,7 @@ console.log(arrofName)
 
 
 var server = http.createServer(function (req, res) {
-    res.writeHead(200);
-    res.end('Array of my --- ' + arrofName);
+res.writeHead(200);
+res.end(JSON.stringify(arrofName));
 });
 server.listen(8080);
