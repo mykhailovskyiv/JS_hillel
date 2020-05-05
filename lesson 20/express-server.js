@@ -3,6 +3,7 @@ var app = express();
 var cors = require('cors')
 
 
+
 function user(id, name) {
     this.id = id || 'id';
     this.name = name || 'User Name';
@@ -22,10 +23,7 @@ var arrOfUsers = arrUsers(10).map(function (id) {
 })
 
 
-
-
-app.use(cors())
-
+app.use(express.json())
 
 
 app.get('/', function (req, res) {
@@ -51,3 +49,4 @@ app.listen(3000, function () {
 });
 
 console.log(arrOfUsers)
+
