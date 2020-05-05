@@ -1,46 +1,45 @@
 function Animal(gender, moveTypes) {
-    this.gender = gender || 'female';
-    this.moveTypes = moveTypes || 'Jump, Run';
-};
+  this.gender = gender || "female";
+  this.moveTypes = moveTypes || "Jump, Run";
+}
 
 Animal.prototype.jump = function () {
-    console.log('Jumping')
+  console.log("Jumping");
 };
 
 Animal.prototype.run = function () {
-    console.log('Running');
+  console.log("Running");
 };
 
 function Mammal() {
-    Animal.call(this)
-};
+  Animal.call(this);
+}
 
 Mammal.prototype = Object.create(Animal.prototype);
 Mammal.prototype.constructor = Mammal;
 
 Mammal.prototype.giveMilk = function () {
-    if (this.gender === 'female') {
-        return true
-    }
+  if (this.gender === "female") {
+    return true;
+  }
 
-    if (this.gender === 'male') {
-        return false
-    }
+  if (this.gender === "male") {
+    return false;
+  }
 };
 
 Coon.prototype = Object.create(Mammal.prototype);
 Coon.prototype.constructor = Coon;
 
 function Coon() {
-    Mammal.call(this)
-};
-
+  Mammal.call(this);
+}
 
 Coon.prototype.thief = function () {
-    console.log("im thief");
+  console.log("im thief");
 };
-
 
 var coon = new Coon();
 console.log(coon);
 
+//trying to fix github
