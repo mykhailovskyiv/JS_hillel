@@ -1,10 +1,10 @@
 import {
   sum,
   conditionalSum,
+  conditionalReturn,
   reverseNum,
   alphabetOrder,
   convertUppercase,
-  conditionalReturn,
 } from "../math";
 
 describe("Math libary", () => {
